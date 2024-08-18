@@ -39,7 +39,7 @@ func handleConnection(conn net.Conn) {
 	scanner := bufio.NewScanner(conn)
 	for scanner.Scan() {
 		content := scanner.Text()
-		fmt.Printf("[%s]: %s\n", conn.RemoteAddr(), content)
+		fmt.Printf(content)
 	}
 
 	if err := scanner.Err(); err != nil {
